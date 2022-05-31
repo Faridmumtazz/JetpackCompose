@@ -1,4 +1,4 @@
-package mumtaz.binar.jetpackcompose
+package mumtaz.binar.jetpackcompose.pertemuanpertama
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,7 +13,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import mumtaz.binar.jetpackcompose.ui.theme.JetpackComposeTheme
 
-class LayoutSatu : ComponentActivity() {
+class LayoutDua : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -23,7 +23,7 @@ class LayoutSatu : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting4("Android")
+                    Greeting5("Android")
                 }
             }
         }
@@ -31,20 +31,22 @@ class LayoutSatu : ComponentActivity() {
 }
 
 @Composable
-fun Greeting4(name: String) {
+fun Greeting5(name: String) {
     val context = LocalContext.current
-    var username by remember{ mutableStateOf("") }
-    var password by remember{ mutableStateOf("") }
+    var panjang by remember{ mutableStateOf("") }
+    var lebar by remember{ mutableStateOf("") }
+    var tinggi by remember{ mutableStateOf("") }
     var hasil by remember{ mutableStateOf("") }
 
     Column() {
-        TextField(value = username, onValueChange = {username = it})
-        TextField(value = password, onValueChange = {password = it})
+        TextField(value = panjang, onValueChange = {panjang = it})
+        TextField(value = lebar, onValueChange = {lebar = it})
+        TextField(value = tinggi, onValueChange = {tinggi = it})
         Button(onClick = {
-            hasil = username + password
-            context.startActivity(Intent(context, LayoutDua::class.java))
+            hasil = (panjang.toInt() * lebar.toInt() * tinggi.toInt()).toString()
+            context.startActivity(Intent(context, LayoutTiga::class.java))
         }) {
-            Text(text = "Login")
+            Text(text = "Hitung")
         }
         Text(text = hasil)
     }
@@ -52,8 +54,8 @@ fun Greeting4(name: String) {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun DefaultPreview4() {
+fun DefaultPreview5() {
     JetpackComposeTheme {
-        Greeting4("Android")
+        Greeting5("Android")
     }
 }

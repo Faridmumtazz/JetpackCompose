@@ -14,29 +14,19 @@
         android:theme="@style/Theme.JetpackCompose"
         tools:targetApi="31">
         <activity
-            android:name=".LayoutTiga"
+            android:name=".pertemuankedua.latihan.HomeActivity"
             android:exported="false"
-            android:label="@string/title_activity_layout_tiga"
+            android:label="@string/title_activity_home"
             android:theme="@style/Theme.JetpackCompose" />
         <activity
-            android:name=".LayoutDua"
+            android:name=".pertemuankedua.latihan.RegisterActivity"
             android:exported="false"
-            android:label="@string/title_activity_layout_dua"
+            android:label="@string/title_activity_register"
             android:theme="@style/Theme.JetpackCompose" />
         <activity
-            android:name=".LayoutSatu"
-            android:exported="false"
-            android:label="@string/title_activity_layout_satu"
-            android:theme="@style/Theme.JetpackCompose" />
-        <activity
-            android:name=".InputLayout"
-            android:exported="false"
-            android:label="@string/title_activity_input_layout"
-            android:theme="@style/Theme.JetpackCompose" />
-        <activity
-            android:name=".SplashActivity"
+            android:name=".pertemuankedua.latihan.LoginActivity"
             android:exported="true"
-            android:label="@string/title_activity_splash"
+            android:label="@string/title_activity_login"
             android:theme="@style/Theme.JetpackCompose">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,7 +35,58 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".pertemuankedua.MainActivityy"
+            android:exported="true"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuankedua.CardView"
+            android:exported="false"
+            android:label="@string/title_activity_card_view"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuankedua.ScrollView"
+            android:exported="false"
+            android:label="@string/title_activity_scroll_view"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuankedua.RecycleView"
+            android:exported="true"
+            android:label="@string/title_activity_recycle_view"
+            android:theme="@style/Theme.JetpackCompose">
+
+        </activity>
+        <activity
+            android:name=".pertemuankedua.BoxActivity"
+            android:exported="false"
+            android:label="@string/title_activity_box"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuanpertama.LayoutTiga"
+            android:exported="false"
+            android:label="@string/title_activity_layout_tiga"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuanpertama.LayoutDua"
+            android:exported="false"
+            android:label="@string/title_activity_layout_dua"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuanpertama.LayoutSatu"
+            android:exported="false"
+            android:label="@string/title_activity_layout_satu"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuanpertama.InputLayout"
+            android:exported="false"
+            android:label="@string/title_activity_input_layout"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuanpertama.SplashActivity"
+            android:exported="true"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/Theme.JetpackCompose" />
+        <activity
+            android:name=".pertemuanpertama.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.JetpackCompose" />

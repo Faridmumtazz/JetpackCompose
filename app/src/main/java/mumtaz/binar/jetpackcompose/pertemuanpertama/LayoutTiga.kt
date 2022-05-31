@@ -1,4 +1,4 @@
-package mumtaz.binar.jetpackcompose
+package mumtaz.binar.jetpackcompose.pertemuanpertama
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import mumtaz.binar.jetpackcompose.ui.theme.JetpackComposeTheme
 
-class InputLayout : ComponentActivity() {
+class LayoutTiga : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -21,7 +21,7 @@ class InputLayout : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting3("Android")
+                    Greeting6("Android")
                 }
             }
         }
@@ -29,28 +29,27 @@ class InputLayout : ComponentActivity() {
 }
 
 @Composable
-fun Greeting3(name: String) {
-    var angka1 by remember{ mutableStateOf("")}
-    var angka2 by remember{ mutableStateOf("")}
-    var hasil by remember{ mutableStateOf("")}
-    
+fun Greeting6(name: String) {
+    var total by remember{ mutableStateOf("") }
+    var bayar by remember{ mutableStateOf("") }
+    var hasil by remember{ mutableStateOf("") }
+
     Column() {
-        TextField(value = angka1, onValueChange = {angka1 = it})
-        TextField(value = angka2, onValueChange = {angka2 = it})
+        TextField(value = total, onValueChange = {total = it})
+        TextField(value = bayar, onValueChange = {bayar = it})
         Button(onClick = {
-            hasil = (angka1.toInt() + angka2.toInt()).toString()
+            hasil = (bayar.toInt() - total.toInt()).toString()
         }) {
-            Text(text = "Proses Tambah")
+            Text(text = "Hitung")
         }
         Text(text = hasil)
     }
-    
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun DefaultPreview3() {
+fun DefaultPreview6() {
     JetpackComposeTheme {
-        Greeting3("Android")
+        Greeting6("Android")
     }
 }

@@ -1,4 +1,4 @@
-package mumtaz.binar.jetpackcompose
+package mumtaz.binar.jetpackcompose.pertemuanpertama
 
 import android.content.Intent
 import android.os.Bundle

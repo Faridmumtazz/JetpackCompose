@@ -1,27 +1,28 @@
-package mumtaz.binar.jetpackcompose
+package mumtaz.binar.jetpackcompose.pertemuankedua
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import mumtaz.binar.jetpackcompose.ui.theme.JetpackComposeTheme
+import androidx.compose.ui.unit.dp
+import mumtaz.binar.jetpackcompose.R
+import mumtaz.binar.jetpackcompose.pertemuankedua.ui.theme.JetpackComposeTheme
 
-class SplashActivity : ComponentActivity() {
+class ScrollView : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -31,42 +32,27 @@ class SplashActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting2("Android")
+                    Greeting9("Android")
                 }
             }
         }
-
-       Handler().postDelayed({
-            startActivity(Intent(this, LayoutSatu::class.java))
-        }, 2000)
     }
 }
 
 @Composable
-fun Greeting2(name: String) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Image(
-            painter = painterResource(R.drawable.ic_launcher_background),
-            contentDescription = "icon"
-        )
-        Text(
-            text = "Hello $name!",
-            color = Color.Cyan,
-            modifier = Modifier.fillMaxWidth()
-        )
+fun Greeting9(name: String) {
+    Column(modifier = Modifier
+        .padding(15.dp)
+        .verticalScroll(rememberScrollState())) {
+        Image(painter = painterResource(R.drawable.ic_launcher_background), contentDescription = "img")
+        Text(stringResource(R.string.description), modifier = Modifier.padding(top = 20.dp), textAlign = TextAlign.Justify)
     }
-
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun DefaultPreview2() {
+fun DefaultPreview9() {
     JetpackComposeTheme {
-        Greeting2("Android")
+        Greeting9("Android")
     }
 }
